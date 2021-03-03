@@ -1,6 +1,7 @@
 package edu.temple.assignment4;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -44,7 +45,7 @@ public class ImageAdapter extends BaseAdapter{
             textView = (TextView) convertView;
         }
 
-        textView.setText(String.format("%d: %s", position, items.get(position)));
+        textView.setText(String.format("%s", items.get(position)));
 
         return textView;
     }

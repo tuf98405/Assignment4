@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        spinner = findViewById(R.id.spinner);
+        spinner = (Spinner)findViewById(R.id.spinner);
 
 
         potatoArray = new ArrayList<String>();
@@ -46,9 +46,7 @@ public class MainActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                }
-                else {
+                if (position != 0) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 intent.putStringArrayListExtra("imageArray", potatoArray);
                 intent.putExtra("position", position);

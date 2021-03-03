@@ -26,9 +26,10 @@ public class MainActivity2 extends AppCompatActivity {
 
         imageArray = getIntent().getStringArrayListExtra("imageArray");
         int position = getIntent().getIntExtra("position", 0);
+        String name = getIntent().getStringExtra(("name"));
 
         imageView.setImageResource((Integer) imageArray.get(position));
-        //textView.setText(getIntent().getStringExtra("image"));
+        //textView.setText(name);
 
     }
 }
