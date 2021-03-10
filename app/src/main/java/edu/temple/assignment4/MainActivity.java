@@ -43,11 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 intent.putExtra("image", potatoArray[position]);
 
-                String imageName = getResources().getResourceName(potatoArray[position]);
+                String imageName = view.getResources().getResourceName(potatoArray[position]);
                 int pos = imageName.indexOf("/") + 1;
                 imageName = imageName.substring(pos);
 
-                intent.putExtra("name",imageName);
+                intent.putExtra("name", imageName);
                 startActivity(intent);
             }
         });
