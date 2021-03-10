@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class ImageAdapter extends BaseAdapter{
 
     Context context;
-    ArrayList<String> items;
+    ArrayList<R.drawable> items;
 
     public ImageAdapter (Context context, ArrayList items){
         this.context = context;
