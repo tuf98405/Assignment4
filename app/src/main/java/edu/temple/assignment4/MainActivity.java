@@ -3,6 +3,7 @@ package edu.temple.assignment4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -32,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         gridV = (GridView)findViewById(R.id.gridView);
 
 
-
-
         ImageAdapter adapter = new ImageAdapter(this, potatoArray);
 
         gridV.setAdapter(adapter);
@@ -43,15 +42,16 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 intent.putExtra("image", potatoArray[position]);
+
+                String imageName = getResources().getResourceName(potatoArray[position]);
+                int pos = imageName.indexOf("/") + 1;
+                imageName = imageName.substring(pos);
+
+                intent.putExtra("name",imageName);
                 startActivity(intent);
             }
         });
 
     }
-    /*
-    private void showPicture(int position) {
-        imageView.setImageResource((Integer) potatoArray.get(position));
-    }
-     */
 
 }

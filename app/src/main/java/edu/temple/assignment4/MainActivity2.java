@@ -26,12 +26,11 @@ public class MainActivity2 extends AppCompatActivity {
         textView = findViewById(R.id.textView);
 
         intent = getIntent();
-        //int position = getIntent().getIntExtra("position", 0);
-        //String name = getIntent().getStringExtra(("name"));
+        String name = getIntent().getStringExtra(("name"));
 
 
         imageView.setImageResource(intent.getIntExtra("image",0));
-        //textView.setText(name);
+        textView.setText(name);
 
 
     }
