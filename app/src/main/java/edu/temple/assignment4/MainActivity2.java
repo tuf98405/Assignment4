@@ -2,6 +2,7 @@ package edu.temple.assignment4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -14,7 +15,7 @@ public class MainActivity2 extends AppCompatActivity {
     ImageView imageView;
     TextView textView;
 
-    ArrayList imageArray;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +25,14 @@ public class MainActivity2 extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         textView = findViewById(R.id.textView);
 
-        imageArray = getIntent().getStringArrayListExtra("imageArray");
-        int position = getIntent().getIntExtra("position", 0);
-        String name = getIntent().getStringExtra(("name"));
+        intent = getIntent();
+        //int position = getIntent().getIntExtra("position", 0);
+        //String name = getIntent().getStringExtra(("name"));
 
-        imageView.setImageResource((Integer) imageArray.get(position));
+
+        imageView.setImageResource(intent.getIntExtra("image",0));
         //textView.setText(name);
+
 
     }
 }

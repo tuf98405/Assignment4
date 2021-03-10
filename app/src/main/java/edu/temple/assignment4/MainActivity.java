@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
 
-    ArrayList potatoArray;
+    int[] potatoArray = {R.drawable.straight, R.drawable.hydroberd, R.drawable.uwuberd};
 
     ImageView imageView;
     GridView gridV;
@@ -32,11 +32,6 @@ public class MainActivity extends AppCompatActivity {
         gridV = (GridView)findViewById(R.id.gridView);
 
 
-        potatoArray = new ArrayList<R.drawable>();
-        potatoArray.add(R.drawable.straight);
-        potatoArray.add(R.drawable.hydroberd);
-        potatoArray.add(R.drawable.uwuberd);
-
 
 
         ImageAdapter adapter = new ImageAdapter(this, potatoArray);
@@ -47,15 +42,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putStringArrayListExtra("imageArray", potatoArray);
-                intent.putExtra("position", position);
+                intent.putExtra("image", potatoArray[position]);
                 startActivity(intent);
             }
         });
 
     }
+    /*
     private void showPicture(int position) {
         imageView.setImageResource((Integer) potatoArray.get(position));
     }
+     */
 
 }
